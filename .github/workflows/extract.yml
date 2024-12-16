@@ -20,7 +20,7 @@ jobs:
       run: mkdir extracted
 
     - name: Extract ZIP files
-      run: unzip "*.zip" -d extracted/
+      run: unzip  -d extracted/
 
     - name: Commit and Push Extracted Files
       run: |
