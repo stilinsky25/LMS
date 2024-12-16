@@ -20,7 +20,7 @@ jobs:
       run: mkdir extracted
 
     - name: Extract ZIP files
-      run: unzip  -d extracted/
+      run: unzip video.zip -d extracted/
 
     - name: Commit and Push Extracted Files
       run: |
