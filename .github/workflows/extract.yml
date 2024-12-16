@@ -3,7 +3,7 @@ name: Unzip Video File
 on:
   push:
     paths:
-      - "*.zip"  # Trigger workflow jika file ZIP berubah
+      - "*.zip"  # Trigger workflow jika ada file ZIP yang di-push
     branches:
       - main  # Hanya berlaku untuk branch main
 
@@ -27,7 +27,7 @@ jobs:
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
-        git pull --rebase origin main
+        git pull --rebase origin main  # Menarik perubahan terbaru dari remote branch main
         git add extracted/*
         git commit -m "Extracted video.zip" || echo "No changes to commit"
         git push
