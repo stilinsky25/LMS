@@ -2,9 +2,10 @@ name: Unzip Video File
 
 on:
   push:
-    paths:
-      - main
-
+   paths:
+      - "*.zip"  # Memicu workflow saat file ZIP di-push
+    branches:
+      - main  # Memicu workflow saat ada perubahan di branch main
 jobs:
   unzip:
     runs-on: ubuntu-latest
