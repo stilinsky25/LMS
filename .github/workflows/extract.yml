@@ -22,11 +22,12 @@ jobs:
       run: unzip video.zip -d extracted/
 
     - name: Commit and Push Extracted Files
-    env:
+      env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
+        git pull --rebase origin main
         git add extracted/*
-        git commit -m "Extracted video.zip"
+        git commit -m "Extracted video.zip" || echo "No changes to commit"
         git push
