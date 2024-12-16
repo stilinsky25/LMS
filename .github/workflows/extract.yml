@@ -2,8 +2,8 @@ name: extract File
 
 on:
   push:
-    paths:
-      - "*.zip"  # Hanya berjalan jika ada file ZIP yang diunggah
+    branches:
+      - main  # Workflow berjalan saat ada perubahan di branch 'main'
 
 jobs:
   unzip:
