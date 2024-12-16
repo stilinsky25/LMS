@@ -1,9 +1,9 @@
-name: extract File
+name: Unzip Video File
 
 on:
   push:
-    branches:
-      - main  # Workflow berjalan saat ada perubahan di branch 'main'
+    paths:
+      - "*.zip"
 
 jobs:
   unzip:
@@ -16,9 +16,6 @@ jobs:
     - name: List all files in repository
       run: ls -l
 
-    - name: Create extraction folder
-      run: mkdir extracted
-
     - name: Extract video.zip file
       run: unzip video.zip -d extracted/
 
@@ -27,5 +24,5 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add extracted/*
-        git commit -m "Extracted ZIP files"
+        git commit -m "Extracted video.zip"
         git push
