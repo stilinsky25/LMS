@@ -13,13 +13,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: List ZIP files in repository
+    - name: List all files in repository
       run: ls -l
 
     - name: Create extraction folder
       run: mkdir extracted
 
-    - name: Extract ZIP files
+    - name: Extract video.zip file
       run: unzip video.zip -d extracted/
 
     - name: Commit and Push Extracted Files
