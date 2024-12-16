@@ -3,9 +3,9 @@ name: Unzip Video File
 on:
   push:
     paths:
-      - "*.zip"  # Memicu workflow saat file ZIP di-push
+      - "*.zip"  # Trigger workflow jika file ZIP berubah
     branches:
-      - main  # Memicu workflow saat ada perubahan di branch main
+      - main  # Hanya berlaku untuk branch main
 
 jobs:
   unzip:
@@ -19,7 +19,7 @@ jobs:
       run: ls -l
 
     - name: Extract video.zip file
-      run: unzip video.zip -d extracted/  # Ganti path jika perlu
+      run: unzip video.zip -d extracted/
 
     - name: Commit and Push Extracted Files
       run: |
