@@ -3,7 +3,7 @@ name: Unzip Video File
 on:
   push:
     paths:
-      - "*.zip"
+      - main
 
 jobs:
   unzip:
